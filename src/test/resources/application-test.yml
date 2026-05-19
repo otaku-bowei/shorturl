@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: shorturl-test
+
+  # 使用 H2 内存数据库
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=MySQL;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+
+  # Redis 配置（使用 embedded-redis 或 mock）
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+server:
+  port: 8080
+
+shorturl:
+  domain: http://localhost:8080
+  expire-days: 30
+  id-gen:
+    start: 100000
