@@ -1,0 +1,105 @@
+{
+  "info": {
+    "name": "shorturl-20260519141746",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "exported at 2026-05-19 14:17:46"
+  },
+  "item": [
+    {
+      "name": "创建短链",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"originalUrl\": \"\",\n  \"expireDays\": 0\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/api/shorturl",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "api",
+            "shorturl"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "description": "创建短链"
+      },
+      "response": []
+    },
+    {
+      "name": "获取短链信息",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/api/shorturl/:shortKey",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "api",
+            "shorturl",
+            ":shortKey"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "key": "shortKey",
+              "value": "",
+              "description": ""
+            }
+          ]
+        },
+        "description": "获取短链信息"
+      },
+      "response": []
+    },
+    {
+      "name": "跳转（重定向）",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/api/shorturl/redirect/:shortKey",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "api",
+            "shorturl",
+            "redirect",
+            ":shortKey"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "key": "shortKey",
+              "value": "",
+              "description": ""
+            }
+          ]
+        },
+        "description": "跳转（重定向）"
+      },
+      "response": []
+    }
+  ],
+  "event": [],
+  "variable": []
+}
