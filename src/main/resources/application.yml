@@ -35,5 +35,5 @@ shorturl:
   id-gen:
     start: 100000
   cache:
-    prefix: short:url:
+    prefix: 'short:url:'
     default-expire-days: 7
